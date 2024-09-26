@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="../static/styles/style_imc.css">
+</head>
+<body>
+    <main>
+        <h1>CÁLCULO IMC</h1>
+        <p>IMC é a sigla para Índice de Massa Corpórea, <br> parâmetro adotado pela Organização Mundial de Saúde para calcular o peso ideal de cada pessoa. <br>
+
+            O índice é calculado da seguinte maneira: <br> divide-se o peso do paciente pela sua altura elevada ao quadrado. <br> Diz-se que o indivíduo tem peso normal quando o resultado do IMC está entre 18,5 e 24,9.
+        </p>
+
+        <div class="tabela_imc">
+            <h2>Veja a Interpretação do IMC</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>IMC</th>
+                        <th>Classificação</th>
+                        <th>Obesidade (grau)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Menor que 18,5</td>
+                        <td>Magreza</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 18,5 e 24,9</td>
+                        <td>Normal</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 25,0 e 29,9</td>
+                        <td>Sobrepeso</td>
+                        <td>I</td>
+                    </tr>
+                    <tr>
+                        <td>Entre 30,0
+                            e 39,9</td>
+                            <td>Obesidade</td>
+                            <td>II</td>
+                        </tr>
+                        <tr>
+                            <td>Maior que 40,0</td>
+                            <td>Obesidade grave</td>
+                            <td>III</td>
+                        </tr>
+                 </tbody>
+            </table> <br>
+             
+            <h1>DESCUBRA SEU IMC</h1>
+
+        <div class="conversor">
+            <form action="/" method="post" class="conversor_formulario">
+                <div class="conversor_label">
+
+                <div class="peso_input">
+                    <div class="calculo_peso">
+                        <label for="">Peso (ex.: 69.2):</label>
+                            <input type="text" name="peso" value="{{peso_calc}}" id="peso">
+                        <span>KG</span>
+                    </div>
+                    <div class="altura_input">
+                        <label for="">Altura (ex.: 170):</label><br>
+                            <input type="text" name="altura" value="{{ altura_calc }}" id="altura">
+                         <span>CM</span>
+                    </div>
+                    <div class="conversor_opcoes">
+                        <div class="resultado_imc">
+                            <label for="">Seu IMC:></label><br>
+                            <input type="text" name="resultado" value="{{ imc }}" id="resultado">
+                        </div>
+                        
+                    </div>                    
+                    <div class="botoes">
+                        <button type="submit" class="botao">Calcular</button>
+                        <button type="button" class="limpar" onclick="limparCampos()">Limpar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            function limparCampos() {
+                document.getElementById("peso").value = "";
+                document.getElementById("altura").value = "";
+                document.getElementById("resultado").value = "";
+            }
+        </script>
+    </main>
+    </div>
+</body>
+</html>
